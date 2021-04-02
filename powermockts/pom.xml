@@ -28,17 +28,22 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            　　<groupId>org.powermock</groupId>
-            　　<artifactId>powermock-module-junit4</artifactId>
-            　　<version>2.0.0</version>
-            　　<scope>test</scope>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-module-junit4</artifactId>
+            <version>2.0.0</version>
+            <scope>test</scope>
         </dependency>
         <!-- PowerMock Mockito2 API -->
         <dependency>
-            　　<groupId>org.powermock</groupId>
-            　　<artifactId>powermock-api-mockito2</artifactId>
-            　　<version>2.0.0</version>
-            　　<scope>test</scope>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-api-mockito2</artifactId>
+            <version>2.0.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.12.6</version>
         </dependency>
     </dependencies>
 
