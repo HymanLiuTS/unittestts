@@ -45,6 +45,7 @@ public class UserRespositoryTest {
     @Test
     public void createTest() {
         User user=new User(17,"Hyman");
+        /*mock方法中要先when再return*/
         PowerMockito.when(userMapper.create(user)).thenReturn(1);
         int flag=userRespository.create(user);
         assertEquals(1,flag);
