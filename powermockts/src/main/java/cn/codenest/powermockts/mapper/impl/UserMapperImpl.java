@@ -1,6 +1,7 @@
 package cn.codenest.powermockts.mapper.impl;
 
 import cn.codenest.powermockts.entity.User;
+import cn.codenest.powermockts.exception.InvailedUserException;
 import cn.codenest.powermockts.mapper.UserMapper;
 import org.springframework.stereotype.Component;
 
@@ -19,5 +20,13 @@ public class UserMapperImpl implements UserMapper {
             return 0;
         }
         return 1;
+    }
+
+    @Override
+    public boolean delete(int userId) throws InvailedUserException {
+        if (userId <= 0) {
+            throw new InvailedUserException("用户ID无效");
+        }
+        return true;
     }
 }

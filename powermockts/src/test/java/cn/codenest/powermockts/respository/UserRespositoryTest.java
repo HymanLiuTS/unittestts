@@ -1,6 +1,7 @@
 package cn.codenest.powermockts.respository;
 
 import cn.codenest.powermockts.entity.User;
+import cn.codenest.powermockts.exception.InvailedUserException;
 import cn.codenest.powermockts.mapper.UserMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -52,6 +53,14 @@ public class UserRespositoryTest {
         User user2=new User(1,"Hyman");
         flag=userRespository.create(user2);
         assertEquals(0,flag);
+    }
+
+    @Test
+    public void deleteTest() throws InvailedUserException {
+        /*mock方法中要先when再return*/
+        PowerMockito.when(userMapper.delete(-1)).thenThrow(new InvailedUserException("用户ID无效"));
+        boolean flag=userRespository.delete(-1);
+        assertEquals(false,flag);
     }
 
 }

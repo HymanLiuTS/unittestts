@@ -1,6 +1,7 @@
 package cn.codenest.powermockts.mapper;
 
 import cn.codenest.powermockts.entity.User;
+import cn.codenest.powermockts.exception.InvailedUserException;
 import org.springframework.stereotype.Component;
 
 /**
@@ -13,4 +14,5 @@ import org.springframework.stereotype.Component;
 
 public interface UserMapper {
     int create(User user);
+    boolean delete(int userId) throws InvailedUserException;
 }

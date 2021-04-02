@@ -1,6 +1,7 @@
 package cn.codenest.powermockts.respository;
 
 import cn.codenest.powermockts.entity.User;
+import cn.codenest.powermockts.exception.InvailedUserException;
 import cn.codenest.powermockts.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -20,6 +21,15 @@ public class UserRespository {
 
     public int create(User user) {
         return userMapper.create(user);
+    }
+
+    public boolean delete(int userID) {
+        try {
+            return userMapper.delete(userID);
+        } catch (InvailedUserException e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 
 }
