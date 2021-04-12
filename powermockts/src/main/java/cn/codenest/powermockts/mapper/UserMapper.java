@@ -15,4 +15,6 @@ import org.springframework.stereotype.Component;
 public interface UserMapper {
     int create(User user);
     boolean delete(int userId) throws InvailedUserException;
+
+    void doNothing(int userId);
 }

@@ -32,4 +32,8 @@ public class UserRespository {
         }
     }
 
+    public void doNothing(int userId) {
+        userMapper.doNothing(userId);
+    }
+
 }

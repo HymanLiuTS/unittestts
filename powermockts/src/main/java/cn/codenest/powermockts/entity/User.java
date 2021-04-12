@@ -1,7 +1,5 @@
 package cn.codenest.powermockts.entity;
 
-import lombok.Data;
-
 /**
  * @author ：Hyman
  * @date ：Created in 2021/4/2 13:57
@@ -9,12 +7,27 @@ import lombok.Data;
  * @modified By：
  * @version: $
  */
-@Data
 public class User {
 
     private int age;
 
     private String name;
+
+    public int getAge() {
+        return age;
+    }
+
+    public int grow(int i) {
+        if (!isAvailed(i)) {
+            return -1;
+        }
+        age += i;
+        return age;
+    }
+
+    private boolean isAvailed(int i) {
+        return name != null;
+    }
 
     public User() {
 

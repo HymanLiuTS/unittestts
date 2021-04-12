@@ -29,4 +29,9 @@ public class UserMapperImpl implements UserMapper {
         }
         return true;
     }
+
+    @Override
+    public void doNothing(int userId) {
+        System.out.println("doNothing");
+    }
 }

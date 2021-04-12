@@ -23,6 +23,11 @@ import static org.junit.Assert.*;
 @PowerMockIgnore("javax.management.*")
 public class MathUtilTest {
 
+    /**
+     * create by: Hyman
+     * description: 进行静态方法的模拟时，需要在@PrepareForTest注解中加上需要模拟的类
+     * create time: 2021/4/12
+     */
     @Test
     public void addTest() {
         PowerMockito.mockStatic(MathUtil.class);
